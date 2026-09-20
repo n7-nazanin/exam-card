@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+```
+<!-- Makes the page behave properly on phones -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Something For You 🌸</title>
+
+<!-- =========================================================
+     FONT
+     =========================================================
+     You can replace this Google Font with another one.
+
+     Current font:
+     "Quicksand" = soft, rounded and cute.
+
+     You can find other fonts here:
+     https://fonts.google.com/
+     ========================================================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+    /* =========================================================
+       🌸 EASY CUSTOMIZATION AREA
+       =========================================================
+       Change these variables to customize the whole website.
+       ========================================================= */
+
+    :root {
+
+        /* Main background */
+        --background: #fff7f8;
+
+        /* Main pastel pink */
+        --pink: #f7b6c8;
+
+        /* Lighter pink */
+        --light-pink: #ffe4eb;
+
+        /* Very light pink */
+        --soft-pink: #fff0f4;
+
+        /* Main text color */
+        --text: #594b50;
+
+        /* Darker text */
+        --dark-text: #463a3f;
+
+        /* Cream card color */
+        --cream: #fffaf2;
+
+        /* White */
+        --white: #ffffff;
+
+        /* Soft green */
+        --green: #c9dfc2;
+
+        /* Soft blue */
+        --blue: #cfe5f5;
+
+        /* Shadow */
+        --shadow: 0 10px 30px rgba(130, 91, 105, 0.12);
+
+        /* Rounded corners */
+        --radius: 25px;
+
+        /* Main font */
+        --font: "Quicksand", sans-serif;
+    }
+
+
+    /* =========================================================
+       BASIC RESET
+       ========================================================= */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+
+        min-height: 100vh;
+
+        font-family: var(--font);
+
+        color: var(--text);
+
+        background:
+            radial-gradient(
+                circle at 20% 20%,
+                rgba(255,255,255,0.8),
+                transparent 25%
+            ),
+            radial-gradient(
+                circle at 80% 80%,
+                rgba(247,182,200,0.2),
+                transparent 30%
+            ),
+            var(--background);
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =========================================================
+       DECORATIVE BACKGROUND CLOUDS
+       ========================================================= */
+
+    .background-cloud {
+
+        position: fixed;
+
+        width: 180px;
+        height: 80px;
+
+        background: rgba(255,255,255,0.65);
+
+        border-radius: 100px;
+
+        filter: blur(1px);
+
+        z-index: -1;
+    }
+
+
+    .cloud-1 {
+        top: 10%;
+        left: -60px;
+    }
+
+
+    .cloud-2 {
+        bottom: 12%;
+        right: -70px;
+    }
+
+
+    /* =========================================================
+       MAIN APP CONTAINER
+       ========================================================= */
+
+    .app {
+
+        width: min(100%, 500px);
+
+        min-height: 100vh;
+
+        padding: 25px 18px;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+    }
+
+
+    /* =========================================================
+       MAIN CARD / SCREEN
+       ========================================================= */
+
+    .scene {
+
+        width: 100%;
+
+        min-height: 650px;
+
+        padding: 35px 22px;
+
+        background: rgba(255,255,255,0.72);
+
+        backdrop-filter: blur(10px);
+
+        border: 2px solid rgba(255,255,255,0.9);
+
+        border-radius: 35px;
+
+        box-shadow: var(--shadow);
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        text-align: center;
+
+        position: relative;
+
+        overflow: hidden;
+    }
+
+
+    /* =========================================================
+       DECORATIVE FLOWERS
+       ========================================================= */
+
+    .decoration {
+
+        position: absolute;
+
+        font-size: 24px;
+
+        opacity: 0.65;
+
+        pointer-events: none;
+
+        animation: floatDecoration 4s ease-in-out infinite;
+    }
+
+
+    .flower-1 {
+        top: 25px;
+        left: 25px;
+    }
+
+
+    .flower-2 {
+        top: 45px;
+        right: 30px;
+
+        animation-delay: 1s;
+    }
+
+
+    .flower-3 {
+        bottom: 25px;
+        left: 30px;
+
+        animation-delay: 2s;
+    }
+
+
+    .flower-4 {
+        bottom: 35px;
+        right: 25px;
+
+        animation-delay: 0.5s;
+    }
+
+
+    @keyframes floatDecoration {
+
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(-8px) rotate(5deg);
+        }
+    }
+
+
+    /* =========================================================
+       CAT IMAGES
+       =========================================================
+       Replace the image paths with your own images.
+
+       Example:
+
+       src="images/cat1.png"
+
+       ========================================================= */
+
+    .cat-image {
+
+        width: 190px;
+
+        height: 190px;
+
+        object-fit: contain;
+
+        margin-bottom: 20px;
+
+        filter:
+            drop-shadow(
+                0 8px 8px rgba(100,70,80,0.10)
+            );
+
+        animation:
+            gentleFloat 3s ease-in-out infinite;
+    }
+
+
+    @keyframes gentleFloat {
+
+        0%, 100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-7px);
+        }
+    }
+
+
+    /* =========================================================
+       TEXT
+       ========================================================= */
+
+    .message {
+
+        max-width: 400px;
+
+        font-size: 18px;
+
+        line-height: 1.7;
+
+        color: var(--text);
+
+        margin-bottom: 20px;
+    }
+
+
+    .message strong {
+        color: var(--dark-text);
+    }
+
+
+    .small-message {
+
+        font-size: 15px;
+
+        opacity: 0.85;
+
+        line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       SPEECH BUBBLE
+       ========================================================= */
+
+    .speech-bubble {
+
+        position: relative;
+
+        background: var(--white);
+
+        border-radius: 25px;
+
+        padding: 18px 20px;
+
+        margin-bottom: 20px;
+
+        box-shadow: var(--shadow);
+
+        max-width: 400px;
+
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+
+    .speech-bubble::after {
+
+        content: "";
+
+        position: absolute;
+
+        bottom: -12px;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        border-left: 12px solid transparent;
+
+        border-right: 12px solid transparent;
+
+        border-top: 14px solid var(--white);
+    }
+
+
+    /* =========================================================
+       BUTTONS
+       ========================================================= */
+
+    .button-group {
+
+        display: flex;
+
+        gap: 12px;
+
+        justify-content: center;
+
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        margin-top: 10px;
+    }
+
+
+    .cute-button {
+
+        border: none;
+
+        padding: 13px 27px;
+
+        border-radius: 999px;
+
+        background: var(--pink);
+
+        color: white;
+
+        font-family: var(--font);
+
+        font-size: 16px;
+
+        font-weight: 700;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 5px 12px rgba(200,130,150,0.20);
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+
+    .cute-button:hover {
+
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 8px 18px rgba(200,130,150,0.25);
+    }
+
+
+    .cute-button:active {
+
+        transform: scale(0.95);
+    }
+
+
+    /* =========================================================
+       🌸 NEXT BUTTON
+       =========================================================
+       This button is now used after every phase so the user
+       can read everything before continuing.
+       ========================================================= */
+
+    .next-button {
+
+        margin-top: 12px;
+
+        min-width: 140px;
+
+        background: #f3a9bf;
+    }
+
+
+    .yes-button {
+
+        background: #f4a9bf;
+
+        min-width: 130px;
+    }
+
+
+    /* =========================================================
+       TIMER
+       ========================================================= */
+
+    .timer {
+
+        width: 120px;
+
+        height: 120px;
+
+        border-radius: 50%;
+
+        background: var(--soft-pink);
+
+        border: 5px solid var(--pink);
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        margin: 15px 0 10px;
+
+        font-size: 38px;
+
+        font-weight: 700;
+
+        color: var(--dark-text);
+
+        box-shadow: var(--shadow);
+    }
+
+
+    /* =========================================================
+       GIFT BUTTON
+       ========================================================= */
+
+    .gift-button {
+
+        width: 160px;
+
+        height: 130px;
+
+        border: none;
+
+        border-radius: 25px;
+
+        background: var(--light-pink);
+
+        cursor: pointer;
+
+        font-size: 50px;
+
+        box-shadow: var(--shadow);
+
+        transition: 0.25s ease;
+
+        margin-top: 15px;
+    }
+
+
+    .gift-button:hover {
+
+        transform:
+            translateY(-5px)
+            rotate(-2deg);
+
+        background: #ffd5e1;
+    }
+
+
+    /* =========================================================
+       GALLERY MODAL
+       ========================================================= */
+
+    .modal {
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(70,55,60,0.45);
+
+        backdrop-filter: blur(8px);
+
+        display: none;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 20px;
+
+        z-index: 100;
+    }
+
+
+    .modal.active {
+
+        display: flex;
+
+        animation: fadeIn 0.3s ease;
+    }
+
+
+    @keyframes fadeIn {
+
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    .gallery {
+
+        width: min(100%, 430px);
+
+        background: var(--cream);
+
+        border-radius: 30px;
+
+        padding: 20px;
+
+        position: relative;
+
+        box-shadow:
+            0 20px 60px rgba(60,40,50,0.25);
+
+        animation: popIn 0.35s ease;
+    }
+
+
+    @keyframes popIn {
+
+        from {
+            transform: scale(0.85);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+
+    /* =========================================================
+       GALLERY CLOSE BUTTON
+       ========================================================= */
+
+    .close-button {
+
+        position: absolute;
+
+        top: 12px;
+
+        right: 15px;
+
+        width: 35px;
+
+        height: 35px;
+
+        border: none;
+
+        border-radius: 50%;
+
+        background: var(--light-pink);
+
+        color: var(--dark-text);
+
+        font-size: 20px;
+
+        cursor: pointer;
+
+        z-index: 5;
+    }
+
+
+    /* =========================================================
+       GALLERY IMAGE
+       ========================================================= */
+
+    .gallery-image {
+
+        width: 100%;
+
+        height: 320px;
+
+        object-fit: contain;
+
+        border-radius: 20px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .gallery-counter {
+
+        font-size: 14px;
+
+        opacity: 0.65;
+
+        margin-bottom: 10px;
+    }
+
+
+    .gallery-controls {
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+    }
+
+
+    .gallery-button {
+
+        border: none;
+
+        width: 45px;
+
+        height: 45px;
+
+        border-radius: 50%;
+
+        background: var(--pink);
+
+        color: white;
+
+        font-size: 22px;
+
+        cursor: pointer;
+    }
+
+
+    /* =========================================================
+       FINAL CAT / PET INTERACTION
+       ========================================================= */
+
+    .pet-container {
+
+        position: relative;
+
+        cursor: pointer;
+
+        display: inline-block;
+    }
+
+
+    .heart {
+
+        position: absolute;
+
+        font-size: 25px;
+
+        pointer-events: none;
+
+        animation:
+            heartFloat 1s ease-out forwards;
+    }
+
+
+    @keyframes heartFloat {
+
+        0% {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(0.5);
+        }
+
+        100% {
+
+            opacity: 0;
+
+            transform:
+                translateY(-100px)
+                scale(1.4);
+        }
+    }
+
+
+    .pet-message {
+
+        min-height: 30px;
+
+        font-size: 17px;
+
+        font-weight: 600;
+
+        color: #d887a2;
+
+        margin-top: 10px;
+    }
+
+
+    /* =========================================================
+       SCENE SYSTEM
+       ========================================================= */
+
+    .scene-content {
+
+        display: none;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        animation:
+            sceneAppear 0.5s ease;
+    }
+
+
+    .scene-content.active {
+
+        display: flex;
+    }
+
+
+    @keyframes sceneAppear {
+
+        from {
+
+            opacity: 0;
+
+            transform: translateY(15px);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+    }
+
+
+    /* =========================================================
+       MOBILE / PHONE DESIGN
+       ========================================================= */
+
+    @media (max-width: 500px) {
+
+        .app {
+
+            padding: 10px;
+        }
+
+
+        .scene {
+
+            min-height: calc(100vh - 20px);
+
+            border-radius: 28px;
+
+            padding:
+                30px 18px;
+        }
+
+
+        .cat-image {
+
+            width: 160px;
+
+            height: 160px;
+        }
+
+
+        .message {
+
+            font-size: 16px;
+        }
+
+
+        .speech-bubble {
+
+            font-size: 16px;
+        }
+
+
+        .gallery-image {
+
+            height: 270px;
+        }
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =========================================================
+     BACKGROUND DECORATIONS
+     ========================================================= -->
+
+<div class="background-cloud cloud-1"></div>
+
+<div class="background-cloud cloud-2"></div>
+
+
+<!-- =========================================================
+     MAIN APP
+     ========================================================= -->
+
+<main class="app">
+
+    <section class="scene">
+
+
+        <!-- Decorative flowers -->
+
+        <div class="decoration flower-1">🌸</div>
+
+        <div class="decoration flower-2">🌷</div>
+
+        <div class="decoration flower-3">🌷</div>
+
+        <div class="decoration flower-4">🌸</div>
+
+
+
+        <!-- =================================================
+             SCENE 1
+             ================================================= -->
+
+        <div
+            class="scene-content active"
+            id="scene1"
+        >
+
+            <!-- CHANGE CAT IMAGE HERE -->
+
+            <img
+                class="cat-image"
+                src="cat1.png"
+                alt="Cute cat"
+            >
+
+
+            <div class="speech-bubble">
+
+                <strong>Hi! 🐾</strong>
+
+                <br><br>
+
+                I heard you have an exam coming up.
+
+                <br><br>
+
+                First of all, I want to tell you:
+                <strong>don't be nervous.</strong>
+                Take a deep breath and relax.
+
+                <br><br>
+
+                I mean... I'm saying this while
+                <em>I'm stressed myself. &gt;&lt;</em>
+
+            </div>
+
+
+            <p class="message">
+
+                Can you do a little breathing exercise
+                with me please? 🌸
+
+            </p>
+
+
+            <div class="button-group">
+
+                <button
+                    class="cute-button yes-button"
+                    onclick="nextScene()"
+                >
+                    Yes 💗
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCENE 2 — BREATHING IN
+             ================================================= -->
+
+        <div
+            class="scene-content"
+            id="scene2"
+        >
+
+            <!-- CHANGE CAT IMAGE HERE -->
+
+            <img
+                class="cat-image"
+                src="cat2.png"
+                alt="Cute cat breathing"
+            >
+
+
+            <p class="message">
+
+                Okay... 🌸
+
+                <br><br>
+
+                <strong>Breathe in with me.</strong>
+
+            </p>
+
+
+            <div
+                class="timer"
+                id="timer"
+            >
+                4
+            </div>
+
+
+            <!-- The timer finishes, but the page
+                 DOES NOT automatically move anymore. -->
+
+            <p
+                class="small-message"
+                id="breathingText1"
+            >
+                Take your time... breathe in slowly. 🌿
+            </p>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button
+                class="cute-button next-button"
+                id="nextAfterBreath1"
+                onclick="goToHold()"
+                disabled
+            >
+                Next →
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCENE 3 — HOLD
+             ================================================= -->
+
+        <div
+            class="scene-content"
+            id="scene3"
+        >
+
+            <!-- CHANGE CAT IMAGE HERE -->
+
+            <img
+                class="cat-image"
+                src="cat3.png"
+                alt="Cute cat holding breath"
+            >
+
+
+            <p class="message">
+
+                <strong>Hold it...</strong>
+
+                🌿
+
+            </p>
+
+
+            <div
+                class="timer"
+                id="timer2"
+            >
+                4
+            </div>
+
+
+            <p class="small-message">
+
+                Just hold it gently... 🐱
+
+            </p>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button
+                class="cute-button next-button"
+                id="nextAfterHold"
+                onclick="goToLetGo()"
+                disabled
+            >
+                Next →
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCENE 4 — LET GO
+             ================================================= -->
+
+        <div
+            class="scene-content"
+            id="scene4"
+        >
+
+            <!-- CHANGE CAT IMAGE HERE -->
+
+            <img
+                class="cat-image"
+                src="cat4.png"
+                alt="Cute cat relaxing"
+            >
+
+
+            <p class="message">
+
+                <strong>Let it go...</strong>
+
+                🌸
+
+            </p>
+
+
+            <div
+                class="timer"
+                id="timer3"
+            >
+                4
+            </div>
+
+
+            <p class="small-message">
+
+                Slowly breathe out... 🌷
+
+            </p>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button
+                class="cute-button next-button"
+                id="nextAfterLetGo"
+                onclick="goToRelaxed()"
+                disabled
+            >
+                Next →
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCENE 5 — RELAXED
+             ================================================= -->
+
+        <div
+            class="scene-content"
+            id="scene5"
+        >
+
+            <!-- CHANGE CAT IMAGE HERE -->
+
+            <img
+                class="cat-image"
+                src="cat5.png"
+                alt="Relaxed cute cat"
+            >
+
+
+            <div class="speech-bubble">
+
+                Okay, done! 🐱
+
+                <br><br>
+
+                Now I'm a little more relaxed.
+
+                <br><br>
+
+                And I have something for you...
+
+            </div>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button
+                class="cute-button next-button"
+                onclick="showScene(6)"
+            >
+                Next →
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCENE 6 — FLOWERS
+             ================================================= -->
+
+        <div
+            class="scene-content"
+            id="scene6"
+        >
+
+            <!-- CHANGE FLOWER/CAT IMAGE HERE -->
+
+            <img
+                class="cat-image"
+                src="cat6.png"
+                alt="Cat with flowers"
+            >
+
+
+            <p class="message">
+
+                Here! 🌷
+
+                <br><br>
+
+                I got these flowers for you.
+
+                <br><br>
+
+                I wanted to let you know that,
+                regardless of the outcome,
+                <strong>you are amazing.</strong>
+
+                <br><br>
+
+                I'm so proud of the amazing person
+                that you are, and I love you. 💗
+
+            </p>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button
+                class="cute-button next-button"
+                onclick="showScene(7)"
+            >
+                Next →
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCENE 7 — GOOD LUCK
+             ================================================= -->
+
+        <div
+            class="scene-content"
+            id="scene7"
+        >
+
+            <!-- CHANGE IMAGE HERE -->
+
+            <img
+                class="cat-image"
+                src="cat7.png"
+                alt="Cute cat with cards"
+            >
+
+
+            <p class="message">
+
+                I prepared some little cards for you
+                to wish you luck on your exam. 🌸
+
+                <br><br>
+
+                I know you'll nail it!
+
+                <br><br>
+
+                And remember:
+
+                <strong>
+                    you are amazing either way.
+                </strong>
+
+            </p>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button
+                class="cute-button next-button"
+                onclick="showScene(8)"
+            >
+                Next →
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCENE 8 — GIFT
+             ================================================= -->
+
+        <div
+            class="scene-content"
+            id="scene8"
+        >
+
+            <!-- CHANGE CAT IMAGE HERE -->
+
+            <img
+                class="cat-image"
+                src="cat8.png"
+                alt="Cute cat giving a gift"
+            >
+
+
+            <p class="message">
+
+                Here you are! 🎁
+
+                <br><br>
+
+                Tap on the gift.
+
+            </p>
+
+
+            <!-- Clicking the gift opens the gallery -->
+
+            <button
+                class="gift-button"
+                onclick="openGallery()"
+                aria-label="Open your gift"
+            >
+                🎁
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCENE 9 — FINAL CAT
+             ================================================= -->
+
+        <div
+            class="scene-content"
+            id="scene9"
+        >
+
+            <div
+                class="pet-container"
+                onclick="petCat(event)"
+            >
+
+                <!-- CHANGE FINAL CAT IMAGE HERE -->
+
+                <img
+                    class="cat-image"
+                    src="cat9.png"
+                    alt="Cute cat"
+                >
+
+            </div>
+
+
+            <p class="message">
+
+                That's it! 🌸
+
+                <br><br>
+
+                I hope you liked them.
+
+                <br><br>
+
+                Now you can tap on my photo and pet me... 🐾
+
+            </p>
+
+
+            <!-- This changes every time
+                 the cat is tapped -->
+
+            <div
+                class="pet-message"
+                id="petMessage"
+            >
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     🎁 GALLERY MODAL
+     =========================================================
+
+     This popup contains your four cards/photos.
+
+     The X closes it.
+
+     The left/right buttons move between cards.
+
+     ========================================================= -->
+
+<div
+    class="modal"
+    id="galleryModal"
+>
+
+    <div class="gallery">
+
+
+        <!-- CLOSE BUTTON -->
+
+        <button
+            class="close-button"
+            onclick="closeGallery()"
+            aria-label="Close gallery"
+        >
+            ×
+        </button>
+
+
+        <!-- CURRENT CARD -->
+
+        <img
+            id="galleryImage"
+            class="gallery-image"
+            src=""
+            alt="Your surprise card"
+        >
+
+
+        <!-- PHOTO COUNTER -->
+
+        <div
+            class="gallery-counter"
+            id="galleryCounter"
+        >
+            1 / 4
+        </div>
+
+
+        <!-- PREVIOUS / NEXT -->
+
+        <div class="gallery-controls">
+
+            <button
+                class="gallery-button"
+                onclick="previousPhoto()"
+                aria-label="Previous photo"
+            >
+                ←
+            </button>
+
+
+            <button
+                class="gallery-button"
+                onclick="nextPhoto()"
+                aria-label="Next photo"
+            >
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+
+    /* =========================================================
+       🌸 SCENE SYSTEM
+       ========================================================= */
+
+    let currentScene = 1;
+
+
+    /*
+     * Show one scene and hide all the others.
+     */
+
+    function showScene(number) {
+
+        document
+            .querySelectorAll(".scene-content")
+            .forEach(scene => {
+
+                scene.classList.remove("active");
+
+            });
+
+
+        const scene =
+            document.getElementById("scene" + number);
+
+
+        scene.classList.add("active");
+
+
+        currentScene = number;
+    }
+
+
+
+    /*
+     * Used by the first "Yes" button.
+     */
+
+    function nextScene() {
+
+        showScene(2);
+
+        startBreathingTimer(
+            "timer",
+            "nextAfterBreath1"
+        );
+    }
+
+
+
+    /* =========================================================
+       ⏱️ BREATHING TIMER SYSTEM
+       =========================================================
+
+       IMPORTANT:
+
+       The timer counts down automatically.
+
+       BUT after it reaches zero, the user remains
+       on the same screen.
+
+       The "Next →" button becomes enabled.
+
+       This prevents the message from disappearing
+       before your friend has time to read it.
+       ========================================================= */
+
+
+    function startBreathingTimer(timerId, buttonId) {
+
+        const timer =
+            document.getElementById(timerId);
+
+        const button =
+            document.getElementById(buttonId);
+
+
+        let remaining = 4;
+
+
+        timer.textContent = remaining;
+
+
+        /*
+         * Disable the Next button while
+         * the breathing timer is running.
+         */
+
+        button.disabled = true;
+
+        button.style.opacity = "0.5";
+
+        button.style.cursor = "not-allowed";
+
+
+        const interval =
+            setInterval(() => {
+
+                remaining--;
+
+                timer.textContent = remaining;
+
+
+                if (remaining <= 0) {
+
+                    clearInterval(interval);
+
+
+                    /*
+                     * Enable the Next button.
+                     */
+
+                    button.disabled = false;
+
+                    button.style.opacity = "1";
+
+                    button.style.cursor = "pointer";
+
+                }
+
+            }, 1000);
+    }
+
+
+
+    /* =========================================================
+       BREATHING STEP 1 → HOLD
+       ========================================================= */
+
+    function goToHold() {
+
+        showScene(3);
+
+        startBreathingTimer(
+            "timer2",
+            "nextAfterHold"
+        );
+    }
+
+
+
+    /* =========================================================
+       BREATHING STEP 2 → LET GO
+       ========================================================= */
+
+    function goToLetGo() {
+
+        showScene(4);
+
+        startBreathingTimer(
+            "timer3",
+            "nextAfterLetGo"
+        );
+    }
+
+
+
+    /* =========================================================
+       BREATHING STEP 3 → RELAXED MESSAGE
+       ========================================================= */
+
+    function goToRelaxed() {
+
+        showScene(5);
+    }
+
+
+
+    /* =========================================================
+       🎁 GALLERY
+       =========================================================
+
+       PUT YOUR FOUR CARD IMAGES HERE.
+
+       Example:
+
+       "images/card1.jpg"
+
+       ========================================================= */
+
+    const galleryPhotos = [
+
+        "card1.png",
+
+        "card2.png",
+
+        "card3.png",
+
+        "card4.png"
+
+    ];
+
+
+    let currentPhoto = 0;
+
+
+
+    /*
+     * Open the gallery.
+     */
+
+    function openGallery() {
+
+        currentPhoto = 0;
+
+        updateGallery();
+
+
+        document
+            .getElementById("galleryModal")
+            .classList.add("active");
+    }
+
+
+
+    /*
+     * Close the gallery and continue
+     * to the final cat.
+     */
+
+    function closeGallery() {
+
+        document
+            .getElementById("galleryModal")
+            .classList.remove("active");
+
+
+        /*
+         * Give the closing animation a tiny
+         * moment before showing the final scene.
+         */
+
+        setTimeout(() => {
+
+            showScene(9);
+
+        }, 300);
+    }
+
+
+
+    /*
+     * Update the displayed gallery image.
+     */
+
+    function updateGallery() {
+
+        document
+            .getElementById("galleryImage")
+            .src =
+            galleryPhotos[currentPhoto];
+
+
+        document
+            .getElementById("galleryCounter")
+            .textContent =
+            `${currentPhoto + 1} / ${galleryPhotos.length}`;
+    }
+
+
+
+    /*
+     * Go to the next card.
+     */
+
+    function nextPhoto() {
+
+        currentPhoto++;
+
+
+        /*
+         * Loop back to the first card
+         * after the last card.
+         */
+
+        if (
+            currentPhoto >=
+            galleryPhotos.length
+        ) {
+
+            currentPhoto = 0;
+        }
+
+
+        updateGallery();
+    }
+
+
+
+    /*
+     * Go to the previous card.
+     */
+
+    function previousPhoto() {
+
+        currentPhoto--;
+
+
+        /*
+         * If we're on the first card,
+         * go to the last card.
+         */
+
+        if (currentPhoto < 0) {
+
+            currentPhoto =
+                galleryPhotos.length - 1;
+        }
+
+
+        updateGallery();
+    }
+
+
+
+    /* =========================================================
+       🐱 PET THE CAT
+       ========================================================= */
+
+    const petMessages = [
+
+        "meow! 🐾",
+
+        "I love you! 💗",
+
+        "hehehe~ 🐱",
+
+        "one more pet please... 🥺",
+
+        "you did it! 🌸",
+
+        "purrrrr... 💕"
+
+    ];
+
+
+    let petIndex = 0;
+
+
+
+    function petCat(event) {
+
+        /*
+         * Find the cat container.
+         */
+
+        const container =
+            event.currentTarget;
+
+
+        /*
+         * Create a floating heart.
+         */
+
+        const heart =
+            document.createElement("div");
+
+
+        heart.className = "heart";
+
+
+        heart.textContent = "💗";
+
+
+        /*
+         * Put the heart approximately where
+         * the user tapped.
+         */
+
+        heart.style.left =
+            (
+                event.clientX -
+                container
+                    .getBoundingClientRect()
+                    .left -
+                12
+            ) + "px";
+
+
+        heart.style.top =
+            (
+                event.clientY -
+                container
+                    .getBoundingClientRect()
+                    .top -
+                20
+            ) + "px";
+
+
+        container.appendChild(heart);
+
+
+        /*
+         * Change the message underneath the cat.
+         */
+
+        document
+            .getElementById("petMessage")
+            .textContent =
+            petMessages[petIndex];
+
+
+        petIndex++;
+
+
+        if (
+            petIndex >=
+            petMessages.length
+        ) {
+
+            petIndex = 0;
+        }
+
+
+        /*
+         * Remove the heart after its animation.
+         */
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 1000);
+    }
+
+
+
+    /* =========================================================
+       CLOSE GALLERY BY CLICKING OUTSIDE IT
+       ========================================================= */
+
+    document
+        .getElementById("galleryModal")
+        .addEventListener(
+            "click",
+            function(event) {
+
+                /*
+                 * Only close when clicking the dark
+                 * background, not the gallery itself.
+                 */
+
+                if (
+                    event.target === this
+                ) {
+
+                    closeGallery();
+                }
+
+            }
+        );
+
+
+</script>
+```
+
+</body>
+</html>
